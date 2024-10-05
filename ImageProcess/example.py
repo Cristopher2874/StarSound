@@ -28,6 +28,9 @@ def find_light_zones(image_path, max_illumintation=200, min_area=1000, max_dista
     image = cv2.imread(image_path)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
+    # Get the dimensions of the image
+    height, width = image.shape[:2]
+
     # Apply filter to find light zones
     _, umbral = cv2.threshold(gray, max_illumintation, 255, cv2.THRESH_BINARY)
 
@@ -86,6 +89,8 @@ def find_light_zones(image_path, max_illumintation=200, min_area=1000, max_dista
     info = {
         "image_path": image_path,
         "name": image_name,
+        "width": width,  # Store image width
+        "height": height,  # Store image height
         "centers": centers,
         "metadata": metaData
     }
