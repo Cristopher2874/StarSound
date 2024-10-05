@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:soundpool/soundpool.dart';
 
+//main class
 void main() {
   runApp(const StarSound());
 }
