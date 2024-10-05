@@ -95,5 +95,5 @@ def find_light_zones(image_path, max_illumintation=200, min_area=1000, max_dista
 
     return centers
 
-image_path = r'C:\Users\Gokus\OneDrive\Escritorio\ImageProcess\dwnImg\e6.jpg'
+image_path = r'C:\Users\Gokus\OneDrive\Escritorio\StarSound\ImageProcess\dwnImg\e1.png'
 centers = find_light_zones(image_path, max_illumintation=150, min_area=100, max_distance=50)
