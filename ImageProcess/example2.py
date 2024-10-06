@@ -100,5 +100,44 @@ def find_light_zones(image_path, max_illumintation=200, min_area=1000, max_dista
 
     return centers
 
-image_path = r'C:\Users\Jesus Ramirez\Desktop\StarSound-local\ImageProcess\dwnImg\e1.png'
-centers = find_light_zones(image_path, max_illumintation=150, min_area=100, max_distance=50)
+def process_images(input_folder, output_folder, max_illumination=200, min_area=1000, max_distance=50):
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    for image_file in os.listdir(input_folder):
+        image_path = os.path.join(input_folder, image_file)
+        
+        if image_file.lower().endswith('.png'):
+            try:
+                info = find_light_zones(image_path, max_illumination, min_area, max_distance)
+                
+                output_json_path = os.path.join(output_folder, info['name'] + '.json')
+                with open(output_json_path, 'w') as archivo_json:
+                    json.dump(info, archivo_json, indent=4)
+                
+                print(f"Procesado: {image_file}")
+
+            except Exception as e:
+                print(f"Error con {image_file}: {str(e)}")
+
+
+input_folder = r'C:\Users\Jesus Ramirez\Desktop\StarSound-local\ImageProcess\dwnImg'
+output_folder = r'C:\Users\Jesus Ramirez\Desktop\StarSound-local\ImageProcess\outputJson'
+
+process_images(input_folder, output_folder, max_illumination=150, min_area=100, max_distance=50)
+
+#prueba con un json que guarde solo el nombre de la imagen
+'''
+for image_file in os.listdir(input_folder):
+        image_path = os.path.join(input_folder, image_file)
+        image_name = get_image_name(image_path)
+        info = {
+        "name": image_name,
+        "image_path": image_path
+        }
+
+        output_json_path = os.path.join(output_folder, info['name'] + '.json')
+        with open(output_json_path, 'w') as archivo_json:
+            json.dump(info, archivo_json, indent=4)
+            print(f"Procesado: {image_file}")
+'''
