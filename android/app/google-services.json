@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "399225117081",
+    "project_id": "starsoundtest",
+    "storage_bucket": "starsoundtest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399225117081:android:9b9a1e14941bc4a8321b08",
+        "android_client_info": {
+          "package_name": "com.inctrl.starsound"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPYpSdAD5WaH2xlkR7Jn84dFCb07T5C2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
