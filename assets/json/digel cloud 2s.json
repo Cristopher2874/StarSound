@@ -1,0 +1,57 @@
+{
+    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\ImageProcess\\dwnImg\\Digel Cloud 2S.png",
+    "name": "digel cloud 2s",
+    "width": 720,
+    "height": 1270,
+    "centers": [
+        [
+            360,
+            1196
+        ],
+        [
+            481,
+            1079
+        ],
+        [
+            547,
+            830
+        ],
+        [
+            281,
+            811
+        ],
+        [
+            698,
+            671
+        ],
+        [
+            285,
+            722
+        ],
+        [
+            263,
+            626
+        ],
+        [
+            139,
+            483
+        ],
+        [
+            591,
+            454
+        ],
+        [
+            323,
+            251
+        ],
+        [
+            66,
+            218
+        ],
+        [
+            360,
+            72
+        ]
+    ],
+    "metadata": {}
+}

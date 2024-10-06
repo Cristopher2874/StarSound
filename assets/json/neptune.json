@@ -1,0 +1,29 @@
+{
+    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\ImageProcess\\dwnImg\\Neptune.png",
+    "name": "neptune",
+    "width": 720,
+    "height": 1280,
+    "centers": [
+        [
+            360,
+            1140
+        ],
+        [
+            153,
+            841
+        ],
+        [
+            273,
+            679
+        ],
+        [
+            551,
+            556
+        ],
+        [
+            360,
+            140
+        ]
+    ],
+    "metadata": {}
+}

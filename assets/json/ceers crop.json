@@ -1,0 +1,49 @@
+{
+    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\ImageProcess\\dwnImg\\CEERS Crop.png",
+    "name": "ceers crop",
+    "width": 720,
+    "height": 1280,
+    "centers": [
+        [
+            494,
+            1169
+        ],
+        [
+            183,
+            866
+        ],
+        [
+            280,
+            683
+        ],
+        [
+            362,
+            641
+        ],
+        [
+            218,
+            449
+        ],
+        [
+            168,
+            421
+        ],
+        [
+            374,
+            324
+        ],
+        [
+            99,
+            314
+        ],
+        [
+            691,
+            640
+        ],
+        [
+            29,
+            640
+        ]
+    ],
+    "metadata": {}
+}

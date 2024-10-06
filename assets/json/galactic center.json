@@ -1,0 +1,37 @@
+{
+    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\ImageProcess\\dwnImg\\Galactic Center.png",
+    "name": "galactic center",
+    "width": 720,
+    "height": 1280,
+    "centers": [
+        [
+            360,
+            1268
+        ],
+        [
+            387,
+            660
+        ],
+        [
+            384,
+            590
+        ],
+        [
+            505,
+            520
+        ],
+        [
+            121,
+            408
+        ],
+        [
+            161,
+            376
+        ],
+        [
+            360,
+            16
+        ]
+    ],
+    "metadata": {}
+}

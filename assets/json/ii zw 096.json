@@ -1,0 +1,33 @@
+{
+    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\ImageProcess\\dwnImg\\II Zw 096.png",
+    "name": "ii zw 096",
+    "width": 720,
+    "height": 1280,
+    "centers": [
+        [
+            360,
+            1141
+        ],
+        [
+            469,
+            753
+        ],
+        [
+            391,
+            690
+        ],
+        [
+            361,
+            617
+        ],
+        [
+            382,
+            503
+        ],
+        [
+            360,
+            139
+        ]
+    ],
+    "metadata": {}
+}

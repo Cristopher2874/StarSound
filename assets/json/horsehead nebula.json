@@ -1,48 +1,48 @@
 {
-    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\assets\\img\\Horsehead Nebula.png",
+    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\ImageProcess\\dwnImg\\Horsehead Nebula.png",
     "name": "horsehead nebula",
     "width": 674,
     "height": 1043,
     "centers": [
         [
-            246,
-            1028
+            35,
+            990
         ],
         [
-            385,
-            1023
+            621,
+            1002
         ],
         [
-            531,
-            887
+            322,
+            796
         ],
         [
-            152,
-            762
+            371,
+            799
         ],
         [
-            556,
-            745
+            588,
+            775
         ],
         [
-            210,
-            725
+            547,
+            763
         ],
         [
-            614,
-            675
+            591,
+            678
         ],
         [
-            234,
-            674
-        ],
-        [
-            407,
-            648
+            360,
+            649
         ],
         [
             337,
-            592
+            720
+        ],
+        [
+            458,
+            285
         ]
     ],
     "metadata": {}

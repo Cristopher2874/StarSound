@@ -1,0 +1,65 @@
+{
+    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\ImageProcess\\dwnImg\\Cartwheel Galaxy.png",
+    "name": "cartwheel galaxy",
+    "width": 720,
+    "height": 1280,
+    "centers": [
+        [
+            360,
+            1130
+        ],
+        [
+            301,
+            902
+        ],
+        [
+            243,
+            884
+        ],
+        [
+            156,
+            800
+        ],
+        [
+            371,
+            769
+        ],
+        [
+            495,
+            765
+        ],
+        [
+            130,
+            695
+        ],
+        [
+            303,
+            720
+        ],
+        [
+            414,
+            643
+        ],
+        [
+            337,
+            596
+        ],
+        [
+            498,
+            448
+        ],
+        [
+            463,
+            455
+        ],
+        [
+            384,
+            376
+        ],
+        [
+            360,
+            150
+        ]
+    ],
+    "metadata": {}
+}

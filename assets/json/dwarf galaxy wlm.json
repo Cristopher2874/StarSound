@@ -1,0 +1,65 @@
+{
+    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\ImageProcess\\dwnImg\\Dwarf Galaxy WLM.png",
+    "name": "dwarf galaxy wlm",
+    "width": 720,
+    "height": 1280,
+    "centers": [
+        [
+            360,
+            1135
+        ],
+        [
+            594,
+            962
+        ],
+        [
+            304,
+            894
+        ],
+        [
+            130,
+            781
+        ],
+        [
+            628,
+            748
+        ],
+        [
+            714,
+            725
+        ],
+        [
+            297,
+            570
+        ],
+        [
+            454,
+            524
+        ],
+        [
+            172,
+            505
+        ],
+        [
+            74,
+            364
+        ],
+        [
+            507,
+            353
+        ],
+        [
+            584,
+            338
+        ],
+        [
+            471,
+            288
+        ],
+        [
+            360,
+            142
+        ]
+    ],
+    "metadata": {}
+}

@@ -23,7 +23,7 @@ def get_image_name(image_path):
     image_name = os.path.splitext(os.path.basename(image_path))[0].lower()
     return image_name
 
-def find_light_zones(image_path, max_illumintation=200, min_area=1000, max_distance=50):
+def find_light_zones(image_path, max_illumintation=150, min_area=100, max_distance=50):
     #read image
     image = cv2.imread(image_path)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -100,14 +100,14 @@ def find_light_zones(image_path, max_illumintation=200, min_area=1000, max_dista
 
     return centers
 
-def process_images(input_folder, output_folder, max_illumination=200, min_area=1000, max_distance=50):
+def process_images(input_folder, output_folder, max_illumination=150, min_area=100, max_distance=50):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
     for image_file in os.listdir(input_folder):
         image_path = os.path.join(input_folder, image_file)
         
-        if image_file.lower().endswith('.png'):
+        if image_file.lower().endswith('.png') or image_file.lower().endswith('.jpg'):
             try:
                 info = find_light_zones(image_path, max_illumination, min_area, max_distance)
                 
@@ -121,10 +121,10 @@ def process_images(input_folder, output_folder, max_illumination=200, min_area=1
                 print(f"Error con {image_file}: {str(e)}")
 
 
-input_folder = r'C:\Users\Jesus Ramirez\Desktop\StarSound-local\ImageProcess\dwnImg'
-output_folder = r'C:\Users\Jesus Ramirez\Desktop\StarSound-local\ImageProcess\outputJson'
+input_folder = r'C:\Users\Gokus\OneDrive\Escritorio\StarSound\ImageProcess\dwnImg'
+output_folder = r'C:\Users\Gokus\OneDrive\Escritorio\StarSound\ImageProcess\outputJson'
 
-process_images(input_folder, output_folder, max_illumination=150, min_area=100, max_distance=50)
+process_images(input_folder, output_folder, max_illumination=100, min_area=80, max_distance=50)
 
 #prueba con un json que guarde solo el nombre de la imagen
 '''

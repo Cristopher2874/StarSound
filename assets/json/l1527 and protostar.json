@@ -1,0 +1,25 @@
+{
+    "image_path": "C:\\Users\\Gokus\\OneDrive\\Escritorio\\StarSound\\ImageProcess\\dwnImg\\L1527 and Protostar.png",
+    "name": "l1527 and protostar",
+    "width": 720,
+    "height": 1280,
+    "centers": [
+        [
+            360,
+            1136
+        ],
+        [
+            443,
+            690
+        ],
+        [
+            334,
+            640
+        ],
+        [
+            360,
+            144
+        ]
+    ],
+    "metadata": {}
+}

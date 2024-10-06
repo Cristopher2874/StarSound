@@ -1,14 +1,15 @@
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:soundpool/soundpool.dart';
 import 'package:flutter/material.dart';
-import 'dart:typed_data';
 import 'dart:convert';
 import 'dart:math';
-
 import 'package:starsound/main.dart';
+import 'package:starsound/slides/audio_manager.dart';
+import 'package:path/path.dart' as path;
 
 class Feed extends StatelessWidget {
-  const Feed({super.key});
+  final String imageUrl;
+  const Feed({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +19,24 @@ class Feed extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const FeedPage(title: 'SS'),
+      home: FeedPage(title: 'SS', imageUrl: imageUrl),
     );
   }
 }
 
 class FeedPage extends StatefulWidget {
-  const FeedPage({super.key, required this.title});
+  const FeedPage({super.key, required this.title, required this.imageUrl});
   final String title;
-
+  final String imageUrl;
   @override
   State<FeedPage> createState() => _FeedPageState();
 }
 
 class _FeedPageState extends State<FeedPage> {
-  final String imagePath = "https://firebasestorage.googleapis.com/v0/b/starsoundtest.appspot.com/o/Abell%202744.png?alt=media&token=de2e07eb-6691-415d-8357-ade90d808690";
-  final double originalImageWidth = 1452; // Real image
-  final double originalImageHeight = 2000; // Real image
+  String imagePath = "";
+  String image_name = "";
+  int originalImageWidth = 1452; // Real image
+  int originalImageHeight = 2000; // Real image
 
   List<List<int>> _buttonCoordinates = [];
   List<String> _availableSounds = [];
@@ -48,6 +50,8 @@ class _FeedPageState extends State<FeedPage> {
   @override
   void initState() {
     super.initState();
+    imagePath = widget.imageUrl;
+    image_name = getFileNameFromUrl(imagePath);
     _loadSoundsFromJson();
     _loadCoordinatesFromJson();
   }
@@ -56,7 +60,7 @@ class _FeedPageState extends State<FeedPage> {
   void dispose() {
     // Stop any playing sounds
     _stopAllSounds();
-    _soundPool.dispose(); // Dispose the Soundpool instance
+    //AudioManager().dispose();
     super.dispose();
   }
 
@@ -70,12 +74,14 @@ class _FeedPageState extends State<FeedPage> {
 
   // get the coordinates from the json assets files
   Future<void> _loadCoordinatesFromJson() async {
-    final String response = await rootBundle.loadString('assets/json/horsehead nebula.json');
+    final String response = await rootBundle.loadString('assets/json/$image_name.json');
     final data = await json.decode(response);
 
     setState(() {
       _buttonCoordinates = List<List<int>>.from(
           data["centers"].map((coord) => List<int>.from(coord)));
+      originalImageHeight = data["height"];
+      originalImageWidth = data["width"];
       // Randomly assign sounds to each button
       _assignRandomSoundsToButtons();
     });
@@ -102,19 +108,23 @@ class _FeedPageState extends State<FeedPage> {
   }
 
   Future<void> _playSound(String soundPath) async {
-    // Load and play sound, then store the soundId
-    int soundId = await rootBundle.load(soundPath).then((ByteData soundData) {
-      return _soundPool.load(soundData);
-    });
-    
-    await _soundPool.play(soundId);
-    _playingSounds.add(soundId); // Store the playing sound ID
+    int soundId = await AudioManager().loadSound(soundPath); // Usa AudioManager
+    await AudioManager().playSound(soundId); // Usa AudioManager
+    _playingSounds.add(soundId);
+  }
+
+  String getFileNameFromUrl(String url) {
+    String temp = path.basename(url.split('?')[0]);
+    String fileNameWithoutExtension = temp.replaceAll('.png', '');
+    fileNameWithoutExtension = fileNameWithoutExtension.replaceAll('.jpg', '');
+    fileNameWithoutExtension = fileNameWithoutExtension.toLowerCase();
+    return fileNameWithoutExtension.replaceAll('%20', ' ');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
@@ -168,7 +178,7 @@ class _FeedPageState extends State<FeedPage> {
                 return Stack(
                   children: <Widget>[
                     Image.network(
-                      "https://firebasestorage.googleapis.com/v0/b/starsoundtest.appspot.com/o/Horsehead%20Nebula.png?alt=media&token=7431b1a7-f53a-441c-96dc-dfc50d5a157b",
+                      widget.imageUrl,
                       width: finalWidth,
                       height: finalHeight,
                       fit: BoxFit.contain,
@@ -181,7 +191,7 @@ class _FeedPageState extends State<FeedPage> {
             ),
           ),
           ElevatedButton(
-            child: const Text("data"),
+            child: Text(image_name),
             onPressed: () => {
               _stopAllSounds(), // Stop all sounds before navigating
                Navigator.pushReplacement(
