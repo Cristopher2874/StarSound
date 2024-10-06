@@ -32,7 +32,7 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
-  final String imagePath = "https://th.bing.com/th/id/OIP.BU_k2BwbaDSHdopS8o0G2AHaJI?rs=1&pid=ImgDetMain";
+  final String imagePath = "https://firebasestorage.googleapis.com/v0/b/starsoundtest.appspot.com/o/Abell%202744.png?alt=media&token=de2e07eb-6691-415d-8357-ade90d808690";
   final double originalImageWidth = 1452; // Real image
   final double originalImageHeight = 2000; // Real image
 
@@ -70,12 +70,12 @@ class _FeedPageState extends State<FeedPage> {
 
   // get the coordinates from the json assets files
   Future<void> _loadCoordinatesFromJson() async {
-    final String response = await rootBundle.loadString('assets/json/e6.json');
+    final String response = await rootBundle.loadString('assets/json/horsehead nebula.json');
     final data = await json.decode(response);
 
     setState(() {
       _buttonCoordinates = List<List<int>>.from(
-          data["centros"].map((coord) => List<int>.from(coord)));
+          data["centers"].map((coord) => List<int>.from(coord)));
       // Randomly assign sounds to each button
       _assignRandomSoundsToButtons();
     });
@@ -168,7 +168,7 @@ class _FeedPageState extends State<FeedPage> {
                 return Stack(
                   children: <Widget>[
                     Image.network(
-                      "https://th.bing.com/th/id/OIP.BU_k2BwbaDSHdopS8o0G2AHaJI?rs=1&pid=ImgDetMain",
+                      "https://firebasestorage.googleapis.com/v0/b/starsoundtest.appspot.com/o/Horsehead%20Nebula.png?alt=media&token=7431b1a7-f53a-441c-96dc-dfc50d5a157b",
                       width: finalWidth,
                       height: finalHeight,
                       fit: BoxFit.contain,
