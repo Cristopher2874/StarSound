@@ -16,10 +16,10 @@ class Feed extends StatelessWidget {
     return MaterialApp(
       title: 'StarSound',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: FeedPage(title: 'SS', imageUrl: imageUrl),
+      home: FeedPage(title: 'StarSound', imageUrl: imageUrl),
     );
   }
 }
@@ -126,7 +126,7 @@ class _FeedPageState extends State<FeedPage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.onPrimary,
         title: Text(widget.title),
       ),
       body: ListView(
@@ -190,16 +190,66 @@ class _FeedPageState extends State<FeedPage> {
               },
             ),
           ),
-          ElevatedButton(
-            child: Text(image_name),
-            onPressed: () => {
-              _stopAllSounds(), // Stop all sounds before navigating
-               Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const MyApp()),
-                  )
-            }),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton(
+                      onPressed: () =>{
+                        _stopAllSounds(), // Stop all sounds before navigating
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MyApp()),
+                        )
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          const Text(
+                            "Go Gack",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          const Icon(Icons.backspace_sharp),
+                        ],
+                      ),
+                    ),
+                    ElevatedButton(
+                  onPressed: () =>{
+                    print("TestCase")
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Icon(Icons.info),
+                      const SizedBox(width: 10),
+                      const Text(
+                        "Show Info",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+            ],
+          ),
         ],
       ),
     );

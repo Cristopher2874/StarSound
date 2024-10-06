@@ -35,6 +35,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Random random = Random();
   int? _backgroundSoundId;
   final List<String> _backgroundImages = [
     "https://firebasestorage.googleapis.com/v0/b/starsoundtest.appspot.com/o/Abell%202744.png?alt=media&token=de2e07eb-6691-415d-8357-ade90d808690",
@@ -59,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "https://firebasestorage.googleapis.com/v0/b/starsoundtest.appspot.com/o/Neptune.png?alt=media&token=f813fcb0-59fe-48c4-ade0-29f14e3755ef"
   ];
 
-  int _currentImageIndex = 0; 
+  int _currentImageIndex = 0;
   late Timer _timer; 
   String _currentImageUrl = "";
   bool _isTextVisible = false; // Control visibility
@@ -69,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     //_playBackgroundSound();
+    _currentImageIndex = random.nextInt(_backgroundImages.length);
     _currentImageUrl = _backgroundImages[_currentImageIndex];
     _startImageRotation();
     _startTextVisibility();
@@ -80,11 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _startImageRotation() {
-    Random random = Random();
-    int randomIndex = random.nextInt(_backgroundImages.length);
     _timer = Timer.periodic(Duration(seconds: 5), (timer) {
       setState(() {
-        _currentImageIndex = (randomIndex) % _backgroundImages.length;
+        _currentImageIndex = (_currentImageIndex+1) % _backgroundImages.length;
         _currentImageUrl = _backgroundImages[_currentImageIndex]; // Actualiza la imagen actual
       });
     });
