@@ -40,7 +40,9 @@ class _FeedPageState extends State<FeedPage> {
 
   // Create a list to store the randomly assigned sounds for each button
   List<String> _assignedSounds = [];
+  // ignore: deprecated_member_use, prefer_final_fields
   Soundpool _soundPool = Soundpool();
+  List<int> _playingSounds = []; // Store IDs of currently playing sounds
 
   @override
   void initState() {
@@ -51,8 +53,18 @@ class _FeedPageState extends State<FeedPage> {
 
   @override
   void dispose() {
-    _soundPool.dispose(); // Liberar Soundpool al salir de la página
+    // Stop any playing sounds
+    _stopAllSounds();
+    _soundPool.dispose(); // Dispose the Soundpool instance
     super.dispose();
+  }
+
+  // Function to stop all currently playing sounds
+  Future<void> _stopAllSounds() async {
+    for (int soundId in _playingSounds) {
+      await _soundPool.stop(soundId); // Stop each sound
+    }
+    _playingSounds.clear(); // Clear the list after stopping
   }
 
   // get the coordinates from the json assets files
@@ -88,14 +100,14 @@ class _FeedPageState extends State<FeedPage> {
     }).toList();
   }
 
-  // Play sound when the button is pressed
   Future<void> _playSound(String soundPath) async {
-    // ignore: deprecated_member_use
-    //Soundpool pool = Soundpool();
+    // Load and play sound, then store the soundId
     int soundId = await rootBundle.load(soundPath).then((ByteData soundData) {
       return _soundPool.load(soundData);
     });
+    
     await _soundPool.play(soundId);
+    _playingSounds.add(soundId); // Store the playing sound ID
   }
 
   @override
@@ -170,6 +182,7 @@ class _FeedPageState extends State<FeedPage> {
           ElevatedButton(
             child: const Text("data"),
             onPressed: () => {
+              _stopAllSounds(), // Stop all sounds before navigating
                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
