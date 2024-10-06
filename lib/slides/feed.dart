@@ -88,12 +88,12 @@ class _FeedPageState extends State<FeedPage> {
   }
 
   Future<void> _loadSoundsFromJson() async {
-    // Cargar el archivo audio_manifest.json
+    // uypdate thje file
     final String response = await rootBundle.loadString('assets/audio/sound_manifest.json');
     final data = await json.decode(response);
 
     setState(() {
-      // Actualizar la lista de sonidos
+      // update the sopund list
       _availableSounds = List<String>.from(data["sounds"]);
     });
   }
@@ -108,8 +108,8 @@ class _FeedPageState extends State<FeedPage> {
   }
 
   Future<void> _playSound(String soundPath) async {
-    int soundId = await AudioManager().loadSound(soundPath); // Usa AudioManager
-    await AudioManager().playSound(soundId); // Usa AudioManager
+    int soundId = await AudioManager().loadSound(soundPath); //implement the manager
+    await AudioManager().playSound(soundId); //implement the manager
     _playingSounds.add(soundId);
   }
 

@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _timer = Timer.periodic(Duration(seconds: 5), (timer) {
       setState(() {
         _currentImageIndex = (_currentImageIndex+1) % _backgroundImages.length;
-        _currentImageUrl = _backgroundImages[_currentImageIndex]; // Actualiza la imagen actual
+        _currentImageUrl = _backgroundImages[_currentImageIndex]; // Update the image
       });
     });
   }

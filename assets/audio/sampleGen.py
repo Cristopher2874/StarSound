@@ -20,6 +20,5 @@ def generate_audio_manifest(directory, output_file='sound_manifest.json'):
     with open(os.path.join(directory, output_file), 'w') as f:
         json.dump(manifest, f, indent=4)
 
-#accessroute
 audio_directory = 'assets/audio'
 generate_audio_manifest(audio_directory)

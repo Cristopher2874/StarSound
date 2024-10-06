@@ -84,7 +84,7 @@ class _WebbInfoPageState extends State<WebbInfoPage> {
     );
   }
 
-  // Método para crear una sección de información con título y contenido.
+  // create the section and information widget
   Widget _buildInfoSection(String title, String content) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16.0),
