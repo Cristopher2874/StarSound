@@ -40,17 +40,8 @@ ImageProcess/
 │
 WalkThrough/
 │
-├── lib/
-│   ├── main.dart                # Main page with the images and music
-│   └── slides/
-│       ├── feed.dart       # Interactive feed for creating music based on images
-│       ├── webbInfo.dart       # Information page about the James Webb Space Telescope
-│       ├── scroll.dart          # Test page for shared videos with music
-│       └── audio_manager.dart    # Handles audio playback functionality
-├── assets/
-│   ├── img/           # Store background images and icons
-│   ├── json/          #store the main json files for coordinates and image display info
-│   └── audio/         # Audio files for theme music and sound generation
+├── PorjectDetails.md   #read for project explanation and technical information
+├── Resources.md        # read to find all the open contributions
 │
 └── Project Presentation  # Project presentation for Xalapa NasaSpace Apps event
 
