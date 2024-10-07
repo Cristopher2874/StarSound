@@ -5,6 +5,7 @@
 *Challenge: [Symphony of the stars...](https://www.spaceappschallenge.org/nasa-space-apps-2024/challenges/symphony-of-the-stars-harmonizing-the-james-webb-space-telescope-in-music-and-images/?tab=resources)*
 
 *Under Nasa SpaceApps 2024 context*
+
 --
 
 ## Table of Contents
@@ -92,6 +93,7 @@ Platforms where the project has been implemented, such as mobile, desktop, or we
 ### Code Libraries & Frameworks
 List of code libraries, frameworks, or tools used in the project, along with their links and versions.
 
+- [VS Code](https://code.visualstudio.com/) - Main Code editor
 - [Flutter](https://flutter.dev/) - Core of the project
 - [Dart](https://dart.dev/)
 - [Python](https://python.org/) - Core of JSON and coordinate generation

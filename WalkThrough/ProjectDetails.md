@@ -5,12 +5,18 @@
 *Challenge: [Symphony of the stars...](https://www.spaceappschallenge.org/nasa-space-apps-2024/challenges/symphony-of-the-stars-harmonizing-the-james-webb-space-telescope-in-music-and-images/?tab=resources)*
 
 *Under Nasa SpaceApps 2024 context*
+
 --
 
 ## Table of Contents
 1. [Contributors](#contributors)
-2. [Challenge Preparation](#challenge-preparation)
-3. [License](#license)
+2. [Objective](#objective)
+3. [Challenge Selection](#challenge-selection)
+4. [Concept of the Project](#concept-of-the-project)
+5. [Planning steps](#planning-steps)
+6. [General App Workflow](#workflow)
+7. [Value of the Project](#value-of-the-project)
+8. [Technical Sheet](#technical-steps)
 
 ---
 
@@ -21,13 +27,11 @@
 
 ---
 
-## Challenge Preparation
-
-### Objective
+## Objective
 
 **The objective of the app is to promote sharing knowledge with community by music and image content based on the James Webb Telescope mission**
 
-### Challenge selection
+## Challenge selection
 
 We as team InCtrl decided to take a leap on the spacial science and focus on a recurrent problem: how to share the amaizing science to people that is not familiarized with?
 
@@ -40,7 +44,7 @@ grown-up public could be also stimulated.
 So here the idea born. StarSound, an app similar to the infinite scrolling apps that are present in social media, but now, with images and sounds generated using James Webb Telescope
 data.
 
-### Concept of the project
+## Concept of the project
 
 The main idea of the StarSound App is to have a friendly interface that allows the user to select a JWT image, then, the App will place buttons on the zones where the image
 contains more light, making reference to galaxies, bodies and planets presents in the image. Once the buttons are set, the user can touch the screen and the buttons pressed will
@@ -56,7 +60,7 @@ user can create a new pattern and music each time the user interacts with the im
 The main aim of the project is to encourage people to use this technology and by looking at the musical creations of other users around the world, be inspired to create their
 own music and share it with the community, and in the process, learn about the JWT mission and main facts.
 
-### Planning steps
+## Planning steps
 
 - **Data collection**: We will collect data from the James Webb Telescope, mainly, learn about the mission and key details in the official website
 - **Image Access**: Download and revise the available resources from the JWT official site to implement the images in the project
@@ -70,64 +74,64 @@ own music and share it with the community, and in the process, learn about the J
 - **Information Page**: Develop an specific page to show the key aspects of the JWT mission.
 - **Scroll Page**: create an special page that is displayed with all the community videos and addtions that users create.
 
-### Sounds
-Attributions for sound files used in the project.
+## WorkFlow
 
-- [Lockdown Background Relaxing Theme](https://filmmusic.io/en/song/7658-lockdown)
-  - Main theme implemented in the app main pages and background music.
-  - Lockdown by Sascha Ende
-  - Filmmusic site with free music assets
+The app works following a series of steps:
+1. The images are separately processed and the coordinates for the light bodies added to the correcponding json file. This should be performed by the app in further steps, 
+for now, we as a team had to process the images manually.
+2. Add the resources to the StarSound App: generated json, images and sounds need to be added to the project, in the final stages, we where available to use web
+storage in Firebase in order to retrieve the image files
+3. In the main screen of the App, the user will see the title and three buttons, one with the image of the telescope to navigate to the Feed Editor page and create the mixed music, 
+a second button to access the key JWT mission data and brief explanations, and the final button 'Explore' to see all the work created by the community
+4. In the Feed Editor page, the user will see the image and the buttons will be placed automatically by the app using the coordinates, then the user is able to press the buttons,
+familiarize with the sounds and start making their own music, as each button plays a note or a chord, the user has to make a try several times to achieve a great sound, inviting
+to creativity and maybe, multiple image selection to try different sound patters.
+5. Once the user is happy with the sounds, the user can record a short video of the pattern created, that will save the mixed short "song" created by the user and the image of the
+JWT used, this video can be uploaded to the community.
+6. The user can navigate to the community page to see all the videos created by other users, inspire and learn about the other images available.
 
-- [Main Piano Chords Used](https://freesound.org/search/?q=piano+chords&f=grouping_pack%3A%2229677_Piano+Chords%22)
-  - Sound Package created by [blakengouda](https://freesound.org/people/blakengouda/)
-  - he short piano sounds where implemented as response to the buttons added in the images
-  - Free music samples available in the site Freesound
-  - Package created by autor
-- *Colectioon of different sample sounds used locally, for sound effects played by the placed buttons*
-  - [Triangle_Open_02](https://freesound.org/people/cabled_mess/sounds/349503/) - by [cabled_mess](https://freesound.org/people/cabled_mess/)
-  - [Triangle falc](https://freesound.org/people/Zabuhailo/sounds/465634/) - by [Zabuhailo](https://freesound.org/people/Zabuhailo/)
-  - [Basic triangle wave](https://freesound.org/people/Jovica/sounds/11300/) - by [Jovica](https://freesound.org/people/Jovica/)
-  - [Triangle search](https://freesound.org/search/?q=triangle&f=&s=Automatic+by+relevance&si_tags=0&si_name=0&si_description=0&si_packname=0&si_sound_id=0&si_username=0&d0=0&d1=*&ig=0&r=0&g=1&dp=0&cm=0&mm=0)
-  - [Electric Piano Notes](https://freesound.org/search/?q=Electric+piano&f=grouping_pack%3A%2229622_CS+80+ELECTRIC+PIANO%22) - by [mogigrumbles](https://freesound.org/people/mogigrumbles/)
+## Value of the project
 
-### Platforms
-Platforms where the project has been implemented, such as mobile, desktop, or web.
+As developers, we have this benefits to the community by creating this project:
 
-- **Mobile:** Android Studio -> Android Users
-- **Structure** Flutter Project
-- **Potentially Open** Web and IOs platforms for g¿future implementations
-  
-### Code Libraries & Frameworks
-List of code libraries, frameworks, or tools used in the project, along with their links and versions.
+- Fosters creativity through a novel intersection of visual art and music. User is free to try as many possibilities with the images, the sounds and the random assign to the buttons
+- Encourages interest in space exploration by incorporating educational content about the JWT. We add information and names, relevant to understand the importance of the mission.
+- Provides an engaging platform for users to explore sound in an interactive, exploratory way.
+- The envirorment is similar to many social media platforms, this allows the user to have a comfortable experience.
+- Open to all ages. Children can stimulate by creating particular mixes, but adults can also try to create a unique short song using more complex patterns and logic series to press determinated buttons and combine sounds.
 
-- [Flutter](https://flutter.dev/) - Core of the project
-- [Dart](https://dart.dev/)
-- [Python](https://python.org/) - Core of JSON and coordinate generation
-- [Firebase](https://firebase.google.com/) - For database storage
-- [SoundPool](https://developer.android.com/reference/android/media/SoundPool#:~:text=SoundPool%20|%20Android%20Developers.%20Essentials.%20Gemini%20in%20Android%20Studio.%20Your) - to play sounds
-- [Canva](https://www.canva.com/) - Create visuals and presentations
+We hope that with the community implementation of the StarSound App, we can spark the curiosity, promote the creativity, build a community in the app, promote learning, and reemplace general content, with science scrolling content.
+
+The platform is developed so users have to user their creativity and curiosity to create and explore the possibilities of the app, and also, make an approach to the JWT mission.
+
+## Technical Sheet
+
+---
+
+### Tools
+1. **VS Code**: we implemented this code editor because of the many applications and extensions available.
+2. **Flutter**: the platform allows us to test and deploy the application in almost all the common community devices, even if we used only android at the end.
+3. **Python**: we used this language to process the images and create the json files, also to implement the OpenCV features.
+4. **Firebase**: we implemented this as storage method and to upload the community videos. We had several issues with the Android communication, so this feature is not completely implemented, 
+but isused as main source for images and in future steops coud be the base of all the communication in the app.
+5. **Discord**: platform to communicate with team members
+6. **Canva**: web design of banners, presentations and some other resources
+
+---
+
+### Languages
+
+1. **Dart**: main implementation of Flutter uses dart as language and framwork, the main fileas and screens where developed with dart.
+2. **Python**: implementation of the OpenCV features, json generation and image processing
+3. **Kotlin, Java, C++, JavaScript**: other main languages for the configuration of the project and gradle in different devices
+
+---
+
+### Software libraries or packages
+
 - [Google Drive](https://drive.google.com/) - Store visuals and videos
 - [multidex](https://developer.android.com/build/multidex#kts) - Manage database operations
 - [Card swiper](https://pub.dev/packages/card_swiper/example) - not finally implemented
 - [matplotlib](https://pypi.org/project/matplotlib/)
 - [OpenCV](https://pypi.org/project/opencv-python/)
-
-### Languages
-Programming languages used in the project.
-
-- Dart
-- Python
-- JavaScript
-- JSON files
-- Java
-- Kotlin
-
-Provide additional details about your project. What exactly does it do? How does it work? What benefits does it have? 
-What do you hope to achieve? What tools, coding languages, hardware, or software did you use to develop your project?
-
-   Add objectives of the app
-   Mention the challenge
-   Why did you create the app?
-   Tools and environments useed
-   Low presentation
-   Hight Presentation in future (modelo)
+- [SoundPool](https://developer.android.com/reference/android/media/SoundPool#:~:text=SoundPool%20|%20Android%20Developers.%20Essentials.%20Gemini%20in%20Android%20Studio.%20Your) - to play sounds
