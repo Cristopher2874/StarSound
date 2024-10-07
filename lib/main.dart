@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:starsound/slides/audio_manager.dart';
 import 'package:starsound/slides/feed.dart';
+import 'package:starsound/slides/scroll.dart';
 import 'package:starsound/slides/webbInfo.dart';
 
 void main() async {
@@ -201,6 +202,35 @@ class _MyHomePageState extends State<MyHomePage> {
                       const SizedBox(width: 10),
                       const Text(
                         "Learn More About JWT",
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ScrollFeed()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Icon(Icons.add),
+                      const SizedBox(width: 10),
+                      const Text(
+                        "Explore",
                         style: TextStyle(
                           fontSize: 10,
                           color: Colors.black,

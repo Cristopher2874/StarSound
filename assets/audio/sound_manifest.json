@@ -1,12 +1,20 @@
 {
     "sounds": [
-      "assets/audio/a-piano-chord.wav",
-      "assets/audio/am-piano-chord.wav",
-      "assets/audio/cm-piano-chord.wav",
-      "assets/audio/d-piano-chord.wav",
-      "assets/audio/em-piano-chord.wav",
-      "assets/audio/fm-piano-chord.wav",
-      "assets/audio/gm-piano-chord.wav"
+        "assets/audio/11300__jovica__basic-triangle-wave-2-c4.wav",
+        "assets/audio/349503__cabled_mess__triangle_open_02.wav",
+        "assets/audio/526279__mogigrumbles__cs-80-electric-piano-94-bb6-vel-127.wav",
+        "assets/audio/526281__mogigrumbles__cs-80-electric-piano-91-g6-vel-127.wav",
+        "assets/audio/526282__mogigrumbles__cs-80-electric-piano-87-eb6-vel-127.wav",
+        "assets/audio/526283__mogigrumbles__cs-80-electric-piano-68-g4-vel-127.wav",
+        "assets/audio/526284__mogigrumbles__cs-80-electric-piano-84-c6-vel-127.wav",
+        "assets/audio/526290__mogigrumbles__cs-80-electric-piano-71-b4-vel-127.wav",
+        "assets/audio/a-piano-chord.wav",
+        "assets/audio/am-piano-chord.wav",
+        "assets/audio/cm-piano-chord.wav",
+        "assets/audio/d-piano-chord.wav",
+        "assets/audio/em-piano-chord.wav",
+        "assets/audio/fm-piano-chord.wav",
+        "assets/audio/gm-piano-chord.wav",
+        "assets/audio/lockdown-by-sascha-ende-from-filmmusic-io.mp3"
     ]
-  }
-  
+}

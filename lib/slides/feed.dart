@@ -6,6 +6,7 @@ import 'dart:math';
 import 'package:starsound/main.dart';
 import 'package:starsound/slides/audio_manager.dart';
 import 'package:path/path.dart' as path;
+import 'package:starsound/slides/scroll.dart';
 
 class Feed extends StatelessWidget {
   final String imageUrl;
@@ -226,8 +227,13 @@ class _FeedPageState extends State<FeedPage> {
                     ),
                     ElevatedButton(
                   onPressed: () =>{
-                    print("TestCase")
-                  },
+                        _stopAllSounds(), // Stop all sounds before navigating
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ScrollFeed()),
+                        )
+                      },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,
