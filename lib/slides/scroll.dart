@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:starsound/main.dart';
+import 'package:path/path.dart' as path;
 
 class ScrollFeed extends StatelessWidget {
   const ScrollFeed({super.key});
@@ -48,6 +49,14 @@ class _ScrollFeedPageState extends State<ScrollFeedPage> {
     "https://firebasestorage.googleapis.com/v0/b/starsoundtest.appspot.com/o/NGC%2060.png?alt=media&token=b977f1c5-2b8f-48df-bc9f-666381405faf",
     "https://firebasestorage.googleapis.com/v0/b/starsoundtest.appspot.com/o/Neptune.png?alt=media&token=f813fcb0-59fe-48c4-ade0-29f14e3755ef"
   ];
+
+  String getFileNameFromUrl(String url) {
+    String temp = path.basename(url.split('?')[0]);
+    String fileNameWithoutExtension = temp.replaceAll('.png', '');
+    fileNameWithoutExtension = fileNameWithoutExtension.replaceAll('.jpg', '');
+    fileNameWithoutExtension = fileNameWithoutExtension.toLowerCase();
+    return fileNameWithoutExtension.replaceAll('%20', ' ');
+  }
   //TODO: fix the feed page with infinite scrolling
   @override
   Widget build(BuildContext context) {
@@ -109,8 +118,9 @@ class _ScrollFeedPageState extends State<ScrollFeedPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              getFileNameFromUrl(imageUrls[index]);
               Text(
-                'Image ${index + 1}',
+                'User ${index + 1}',
                 style: const TextStyle(color: Colors.white),
               ),
               IconButton(
