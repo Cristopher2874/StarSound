@@ -8,6 +8,7 @@ For a better approach to the app and the project, we encourage the visitors to g
 - [Project Demo](https://drive.google.com/file/d/1FzAcsLYaD2Fz0iJvgzYqQwjUl-1v07Pr/view?usp=sharing)
 - [Resources](WalkThrough/Resources.md) - **Credits and links**
 - [Project Details](WalkThrough/ProjectDetails.md) - **Process to create StarSound**
+- [Project Video Samples](https://drive.google.com/drive/folders/1LLnZfFD622GoJFfND_7-oqjM0bmH3kM4?usp=sharing)
 
 ## Features
 
