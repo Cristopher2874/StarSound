@@ -17,6 +17,7 @@
 6. [General App Workflow](#workflow)
 7. [Value of the Project](#value-of-the-project)
 8. [Technical Sheet](#technical-steps)
+9. [Future Develop](#future-develop)
 
 ---
 
@@ -104,14 +105,92 @@ def find_light_zones(image_path, max_illumintation=150, min_area=100, max_distan
             # create a rectangle
             x, y, w, h = cv2.boundingRect(per)
             rectangle.append((x, y, w, h))
+    
+    #OTHER CODE: check the source file (code cut)
+
+    # save the coordinates in the list
+    for (x, y, w, h) in rectangle_joined:
+        # calculate rectangle center
+        x_center = int(x + w / 2)
+        y_center = int(y + h / 2)
+        centers.append((x_center, y_center))
 ```
+
+This is the main implementation method, depending on the threshold, the image detects the luminosity, finds the area of the rectangle perimeter of the light body and then, finds
+the center of the rectangle, this center is used as the coordinate to place the buttons.
+
 2. Add the resources to the StarSound App: generated json, images and sounds need to be added to the project, in the final stages, we where available to use web
-storage in Firebase in order to retrieve the image files
+storage in Firebase in order to retrieve the image files. This resources are available in the assets folder and the Firebase storage database.
 3. In the main screen of the App, the user will see the title and three buttons, one with the image of the telescope to navigate to the Feed Editor page and create the mixed music, 
-a second button to access the key JWT mission data and brief explanations, and the final button 'Explore' to see all the work created by the community
+a second button to access the key JWT mission data and brief explanations, and the final button 'Explore' to see all the work created by the community.
 4. In the Feed Editor page, the user will see the image and the buttons will be placed automatically by the app using the coordinates, then the user is able to press the buttons,
 familiarize with the sounds and start making their own music, as each button plays a note or a chord, the user has to make a try several times to achieve a great sound, inviting
 to creativity and maybe, multiple image selection to try different sound patters.
+```dart
+Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                // get available width
+                final double finalWidth = constraints.maxWidth;
+                // calculate height for the available space
+                final double finalHeight =
+                    finalWidth * (originalImageHeight / originalImageWidth);
+
+                // scale for the button coordinates
+                final double scaleX = finalWidth / originalImageWidth;
+                final double scaleY = finalHeight / originalImageHeight;
+
+                // Create buttons list
+                List<Widget> buttons =
+                  List<Widget>.generate(_buttonCoordinates.length, (index) {
+                  final coord = _buttonCoordinates[index];
+                  final String soundPath = _assignedSounds[index];
+
+                  final double scaledX = coord[0] * scaleX;
+                  final double scaledY = coord[1] * scaleY;
+
+                  return Positioned(
+                    left: scaledX,
+                    top: scaledY,
+                    child: SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          _playSound(soundPath);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white.withOpacity(0.3),
+                          padding: EdgeInsets.zero,
+                          elevation: 0,
+                        ),
+                        child: const Text(""),
+                      ),
+                    ),
+                  );
+                });
+
+                return Stack(
+                  children: <Widget>[
+                    Image.network(
+                      widget.imageUrl,
+                      width: finalWidth,
+                      height: finalHeight,
+                      fit: BoxFit.contain,
+                    ),
+                    // Create the corresponding buttons
+                    ...buttons,
+                  ],
+                );
+              },
+            ),
+          ),
+```
+
+Here, the images are placed in the screen without changing the original scale, then the buttons are added to the image in the scaled coordinates. The sounds are played by the assignation of the 
+id of the button and the sound, check the source file ```feed.dart``` for more details.
+
 5. Once the user is happy with the sounds, the user can record a short video of the pattern created, that will save the mixed short "song" created by the user and the image of the
 JWT used, this video can be uploaded to the community.
 6. The user can navigate to the community page to see all the videos created by other users, inspire and learn about the other images available.
@@ -161,3 +240,19 @@ but isused as main source for images and in future steops coud be the base of al
 - [matplotlib](https://pypi.org/project/matplotlib/)
 - [OpenCV](https://pypi.org/project/opencv-python/)
 - [SoundPool](https://developer.android.com/reference/android/media/SoundPool#:~:text=SoundPool%20|%20Android%20Developers.%20Essentials.%20Gemini%20in%20Android%20Studio.%20Your) - to play sounds
+
+---
+
+## Future Develop
+
+1. **Sound Pool Issue**: The soundpool dependency has an issue when playing the background music at the same time than the buttons chords or notes. 
+In future implementations, it is necesary to correct this issue, flowing with the background music and also with the ryhms created.
+2. **Firebase**: The communication with the Firebase storage is not completely implemented, the images are retrieved by a direct link, not the right database implementation.
+It is necessary to implement the Android and web dependency so the app can access correctly to the resources in the cloud.
+3. **App design**: In future releases, it is necessary to improve the view and design of the app to make it more accesible to the users and engaging
+4. **Community**: The community is the main goal of the app, so it is necesary to implement the account creation, authentication, database, longer communication, and
+other necessary issues to create a safe community
+5. **Video recording and sharing**: It is necessary to implement the main feature of the app, it is still in process, with the right develop time, this app
+could be a great platform to share and learn music and science in the community, so this feature is in test mode, not completely implemented.
+
+We are aware that there are more features to include, but for the moment, the idea of the StarSound App is a realty, and we are thrilled to share and receive feedback.
