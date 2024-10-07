@@ -1,7 +1,9 @@
 # StarSound References: recognition to all the contributors
 
 *Section with complete links and references used to create the project StarSound App*
+
 *Challenge: [Symphony of the stars...](https://www.spaceappschallenge.org/nasa-space-apps-2024/challenges/symphony-of-the-stars-harmonizing-the-james-webb-space-telescope-in-music-and-images/?tab=resources)*
+
 *Under Nasa SpaceApps 2024 context*
 --
 
