@@ -5,7 +5,7 @@ StarSound is a Flutter application that allows users to explore the universe thr
 ## Project WalkThrough
 
 For a better approach to the app and the project, we encourage the visitors to go to WalkThrough folder and find the main steps and detailed explanations of the functionality and ideas such as:
-- [Project Demo]()
+- [Project Demo](https://drive.google.com/file/d/1FzAcsLYaD2Fz0iJvgzYqQwjUl-1v07Pr/view?usp=sharing)
 - [Resources](WalkThrough/Resources.md) - **Credits and links**
 - [Project Details](WalkThrough/ProjectDetails.md) - **Process to create StarSound**
 
