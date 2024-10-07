@@ -118,7 +118,7 @@ class _ScrollFeedPageState extends State<ScrollFeedPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              getFileNameFromUrl(imageUrls[index]);
+              //getFileNameFromUrl(imageUrls[index]);
               Text(
                 'User ${index + 1}',
                 style: const TextStyle(color: Colors.white),
