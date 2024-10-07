@@ -79,6 +79,32 @@ own music and share it with the community, and in the process, learn about the J
 The app works following a series of steps:
 1. The images are separately processed and the coordinates for the light bodies added to the correcponding json file. This should be performed by the app in further steps, 
 for now, we as a team had to process the images manually.
+```python
+def find_light_zones(image_path, max_illumintation=150, min_area=100, max_distance=50):
+    #read image
+    image = cv2.imread(image_path)
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # Get the dimensions of the image
+    height, width = image.shape[:2]
+
+    # Apply filter to find light zones
+    _, umbral = cv2.threshold(gray, max_illumintation, 255, cv2.THRESH_BINARY)
+
+    # find the perimeter of the zones
+    perimeter, _ = cv2.findContours(umbral, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    # list to storage the size of the rectangles
+    rectangle = []
+
+    for per in perimeter:
+        # calculate area
+        area = cv2.contourArea(per)
+        if area > min_area:
+            # create a rectangle
+            x, y, w, h = cv2.boundingRect(per)
+            rectangle.append((x, y, w, h))
+```
 2. Add the resources to the StarSound App: generated json, images and sounds need to be added to the project, in the final stages, we where available to use web
 storage in Firebase in order to retrieve the image files
 3. In the main screen of the App, the user will see the title and three buttons, one with the image of the telescope to navigate to the Feed Editor page and create the mixed music, 
