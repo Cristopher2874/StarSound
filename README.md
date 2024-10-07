@@ -1,6 +1,6 @@
 # StarSound
 
-StarSound is a Flutter application that allows users to explore the universe through music inspired by the James Webb Space Telescope. The app includes three main modules: a homepage with theme music, an information page about the telescope, and an interactive feed where users can create their own music based on the brightest zones in astronomical images.
+StarSound is a Flutter application that allows users to explore the universe through music inspired by the James Webb Space Telescope. The app includes four main modules: a homepage with theme music, an information page about the telescope, and an interactive feed where users can create their own music based on the brightest zones in astronomical images.
 
 ## Features
 
@@ -40,7 +40,7 @@ Follow these steps to install and run StarSound on your local machine (waiting f
 ## Project Structure
 
 ```bash
-StarSound/
+StarSoundApp/
 │
 ├── lib/
 │   ├── main.dart                # Main page with the images and music
