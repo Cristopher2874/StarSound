@@ -1,8 +1,7 @@
 # StarSound Project Details: almost complete path of project
 
---
 *Section with description in detail of the creation of the project*
-*Challenge: [Symphony of the stars...](https://www.spaceappschallenge.org/nasa-space-apps-2024/challenges/symphony-of-the-stars-harmonizing-the-james-webb-space-telescope-in-music-and-images/?tab=resources)*}
+*Challenge: [Symphony of the stars...](https://www.spaceappschallenge.org/nasa-space-apps-2024/challenges/symphony-of-the-stars-harmonizing-the-james-webb-space-telescope-in-music-and-images/?tab=resources)*
 *Under Nasa SpaceApps 2024 context*
 --
 
